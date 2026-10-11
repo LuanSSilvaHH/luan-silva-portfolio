@@ -214,11 +214,10 @@ export default function App() {
       <header className="site-header">
         <div className="header-inner container">
           <a className="logo" href="#inicio" aria-label="Luan Silva, início">
-            LS<span className="logo-dot">.</span>
-            <span className="logo-caption">
-              LUAN SILVA
-              <br />
-              DESENVOLVEDOR WEB
+            <span className="logo-icon"><img src="/favicon.png" alt="" /></span>
+            <span className="logo-name">
+              Luan <strong>Silva</strong>
+              <span className="logo-caption">DESENVOLVEDOR WEB</span>
             </span>
           </a>
           <nav
@@ -257,15 +256,7 @@ export default function App() {
       <main>
         <section id="inicio" className="hero">
           <div className="hero-noise" />
-          <div className="hero-image" />
-          <div className="hero-image-overlay" />
-          <div className="hero-film-frame" aria-hidden="true">
-            <span>FRAME 001 / CREATIVE PORTFOLIO</span>
-            <span>EST. 2026 — BRASIL</span>
-          </div>
-          <div className="hero-side-word" aria-hidden="true">
-            LUAN SILVA / DIGITAL EXPERIENCES
-          </div>
+          <div className="hero-grid-texture" aria-hidden="true" />
           <div className="container hero-inner">
             <div className="hero-topline">
               <span className="status-dot" /> DESENVOLVIMENTO WEB INDEPENDENTE{" "}
@@ -290,14 +281,15 @@ export default function App() {
                   <strong>design, estratégia e tecnologia</strong> para
                   transformar presença online em oportunidade.
                 </p>
-                <a
-                  href="#projetos"
-                  className="round-arrow"
-                  aria-label="Explorar projetos"
-                >
-                  <ArrowRight size={25} />
+                <a href="#projetos" className="hero-primary-link">
+                  Ver meus projetos <ArrowUpRight size={20} />
                 </a>
               </div>
+            </div>
+            <div className="hero-brand-showcase" aria-hidden="true">
+              <div className="showcase-top"><span>LS / STUDIO DIGITAL</span><span>01—26</span></div>
+              <div className="showcase-mark"><img src="/favicon.png" alt="" /></div>
+              <div className="showcase-bottom"><span>IDEIAS EM MOVIMENTO.</span><span>EST. 2026</span></div>
             </div>
             <div className="hero-footer">
               <span>LUAN SILVA © 2026</span>
@@ -372,13 +364,13 @@ export default function App() {
             <div
               className="cinema-chapter"
               data-reveal
-              aria-label="Capítulo dos projetos"
+              aria-label="Seleção de projetos"
             >
-              <span>CAPÍTULO II</span>
+              <span>PORTFÓLIO / 2026</span>
               <span className="cinema-chapter-line" />
               <span>
                 EXPERIÊNCIAS DIGITAIS /{" "}
-                {String(visible.length).padStart(2, "0")} CENAS
+                {String(visible.length).padStart(2, "0")} PROJETOS
               </span>
             </div>
             <div className="project-grid">
@@ -583,6 +575,7 @@ export default function App() {
         <div className="container">
           <div className="footer-main">
             <a className="footer-logo" href="#inicio">
+              <img className="footer-mark" src="/favicon.png" alt="" />
               LUAN
               <br />
               SILVA<span>.</span>
