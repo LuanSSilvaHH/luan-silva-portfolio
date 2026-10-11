@@ -5,6 +5,7 @@ import "./styles.css";
 import "./cinematic.css";
 import "./chapters.css";
 import "./brand-refresh.css";
+import "./cinematic-v2.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
