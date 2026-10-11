@@ -1,0 +1,76 @@
+/* Lightweight film-like scrolling: CSS transforms only, no videos or animation dependencies. */
+.hero-image {
+  translate: 0 var(--hero-shift, 0px);
+  will-change: auto;
+}
+.hero-content {
+  opacity: calc(1 - var(--hero-scroll, 0) * 0.82);
+  translate: 0 calc(var(--hero-scroll, 0) * -35px);
+}
+.hero-film-frame {
+  opacity: calc(1 - var(--hero-scroll, 0) * 0.6);
+}
+.cinema-chapter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: -4px 0 35px;
+  color: #b6aa97;
+  font:
+    10px "DM Mono",
+    monospace;
+  letter-spacing: 0.14em;
+}
+.cinema-chapter-line {
+  flex: 1;
+  height: 1px;
+  background: #ffffff30;
+}
+.project-card {
+  overflow: clip;
+}
+.project-image {
+  clip-path: inset(0 round 0);
+  transition: clip-path 0.8s ease;
+}
+.project-card:hover .project-image {
+  clip-path: inset(6px round 0);
+}
+.project-card .project-index:before {
+  content: "SCENE ";
+  color: #e8c89d;
+}
+.project-card .project-image-title {
+  text-shadow: 0 3px 24px #0009;
+}
+.statement-inner p {
+  text-wrap: balance;
+}
+@media (max-width: 800px) {
+  .hero-image {
+    translate: 0 0;
+  }
+  .hero-content {
+    opacity: 1;
+    translate: 0 0;
+  }
+  .cinema-chapter {
+    gap: 9px;
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-image,
+  .hero-content,
+  .hero-film-frame {
+    opacity: 1;
+    translate: 0 0;
+  }
+  .project-image {
+    transition: none;
+    clip-path: none;
+  }
+  .project-card:hover .project-image {
+    clip-path: none;
+  }
+}
