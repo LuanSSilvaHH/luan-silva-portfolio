@@ -268,3 +268,11 @@
   .hero-brand-showcase:hover .showcase-mark img { transform: none; }
   .project-card { translate: 0 0 !important; }
 }
+
+/* Prints reais: preservar as cores de cada identidade visual, sem o filtro cinza do layout anterior. */
+.projects .project-image{background:#121c1b}
+.projects .project-image img{filter:saturate(1.03) brightness(.98) contrast(1.01);object-position:center center}
+.projects .project-card:hover .project-image img{filter:saturate(1.1) brightness(1.045) contrast(1.02);transform:scale(1.025)}
+@media(prefers-reduced-motion:reduce){
+  .projects .project-card:hover .project-image img{transform:none}
+}

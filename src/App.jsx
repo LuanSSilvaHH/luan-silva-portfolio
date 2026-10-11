@@ -25,7 +25,7 @@ const WHATSAPP = (import.meta.env.VITE_WHATSAPP_NUMBER || "5533998803892").repla
 const projects = [
   {
     id: "01",
-    title: "Automotive Detail",
+    title: "NOIR Auto Studio",
     kind: "Estética automotiva",
     type: "Landing page",
     category: "Institucional",
@@ -33,11 +33,11 @@ const projects = [
     image: "/projects/automotiva.webp",
     className: "car",
     description:
-      "Uma presença digital à altura do cuidado dedicado a cada veículo.",
+      "Detalhamento automotivo apresentado com fotografia dramática e visual premium.",
   },
   {
     id: "02",
-    title: "Climatiza",
+    title: "Leal Climatização",
     kind: "Climatização",
     type: "Landing page",
     category: "Institucional",
@@ -45,11 +45,11 @@ const projects = [
     image: "/projects/climatizacao.webp",
     className: "climate",
     description:
-      "Serviços, credibilidade e contato em uma experiência objetiva.",
+      "Um site profissional para apresentar serviços, transmitir confiança e gerar contatos.",
   },
   {
     id: "03",
-    title: "Movimento & Saúde",
+    title: "VittaFisio",
     kind: "Fisioterapia e pilates",
     type: "Site profissional",
     category: "Institucional",
@@ -57,30 +57,31 @@ const projects = [
     image: "/projects/fisioterapia.webp",
     className: "physio",
     description:
-      "Uma apresentação acolhedora para profissionais que cuidam de pessoas.",
+      "Uma experiência acolhedora e editorial para serviços de fisioterapia e movimento.",
   },
   {
     id: "04",
-    title: "Ambiental Engenharia",
-    kind: "Engenharia ambiental",
-    type: "Site institucional",
+    title: "PRUMO Engenharia Civil",
+    kind: "Engenharia civil",
+    type: "Site interativo",
     category: "Institucional",
-    url: "https://demo-ambiental-engenharia.vercel.app/",
+    url: "https://demo-engenharia-civil.vercel.app/",
     image: "/projects/engenharia.webp",
     className: "engineering",
     description:
-      "Design editorial para comunicar competência e visão de futuro.",
+      "Estúdio de projetos com navegação lateral, especialidades e briefing interativo.",
   },
   {
     id: "05",
-    title: "Ieié Menu",
-    kind: "Cardápio digital",
+    title: "Lanche do IEIÉ",
+    kind: "Hamburgueria",
     type: "Aplicação web",
     category: "Aplicação",
-    url: "https://web--ieie-app--nw8yr2c7byc6.code.run",
+    url: "https://web--ieie-app--nw8yr2c7byc6.code.run/",
     image: "/projects/cardapio.webp",
     className: "food",
-    description: "Uma experiência de pedidos com cardápio, opções e carrinho.",
+    description:
+      "Cardápio cinematográfico com personalização de produtos, carrinho e pedidos.",
   },
 ];
 const services = [
@@ -387,7 +388,7 @@ export default function App() {
                   <div className="project-image">
                     <img
                       src={p.image}
-                      alt={`Imagem conceitual de ${p.kind}`}
+                      alt={`Captura da página inicial de ${p.title}`}
                       loading="lazy"
                     />
                     <div className="project-overlay" />
@@ -413,9 +414,9 @@ export default function App() {
               ))}
             </div>
             <div className="projects-note" data-reveal>
-              <span>*</span> Os projetos desta seção são demonstrações
-              conceituais. As imagens de capa são ilustrativas; clique para
-              explorar os sites reais em funcionamento.
+              <span>*</span> Os projetos são demonstrações, não trabalhos contratados.
+              As capas mostram capturas reais dos sites publicados; clique em
+              cada projeto para explorar a versão online.
             </div>
           </div>
         </section>

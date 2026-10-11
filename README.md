@@ -1,46 +1,55 @@
 # Luan Silva | Desenvolvedor Web
 
-Portfólio responsivo em React + Vite, com cinco projetos demonstrativos, serviços, processo de contratação e formulário de orçamento via WhatsApp.
+Portfólio responsivo desenvolvido em React + Vite, com cinco demonstrações publicadas, serviços oferecidos, processo de contratação e solicitação de orçamento por WhatsApp.
 
-## Rodar localmente
+## Executar localmente
 
 ```bash
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-No Windows PowerShell, use `Copy-Item .env.example .env`.
-
-## Ativar WhatsApp (necessário antes de publicar)
-
-Edite `.env`:
-
-```env
-VITE_WHATSAPP_NUMBER=5531999999999
-```
-
-Troque pelo **seu** número, com DDI + DDD e sem espaços ou símbolos. O formulário gera uma mensagem personalizada e abre uma conversa com você no WhatsApp. Se o número não estiver configurado, o formulário exibe um aviso e não envia mensagens a um número incorreto.
-
-No deploy Vercel/Netlify, configure a variável `VITE_WHATSAPP_NUMBER` nas configurações do projeto e gere um novo build.
-
-## Publicar
+Para gerar a versão de produção:
 
 ```bash
 npm run build
 ```
 
-Na Vercel, importe o repositório GitHub, configure Framework Preset `Vite`, Build Command `npm run build` e Output Directory `dist`.
+## Projetos em destaque
 
-## Conteúdo e transparência
+As capas da seção **Projetos** são montagens com **capturas reais das páginas iniciais** das demonstrações hospedadas (não são fotos genéricas, nem trabalhos contratados):
 
-Os cinco links da seção Projetos são demonstrações. As imagens de capa são ilustrativas (Unsplash), **não** screenshots dos projetos nem prova de trabalho contratado. Substitua por capturas reais das demos quando possível.
+| Projeto | Link |
+| --- | --- |
+| NOIR Auto Studio | https://demoautomobilistica.netlify.app/ |
+| Leal Climatização | https://democlimatiza.netlify.app/ |
+| VittaFisio | https://demo-fisio-wine.vercel.app/ |
+| PRUMO Engenharia Civil | https://demo-engenharia-civil.vercel.app/ |
+| Lanche do IEIÉ | https://web--ieie-app--nw8yr2c7byc6.code.run/ |
+
+Todos são projetos demonstrativos; marcas e fotografias de serviços podem ser ilustrativas dentro de cada demo.
+
+Os cards são configurados em `src/App.jsx`, na constante `projects`. As imagens otimizadas em WebP ficam em `public/projects`.
+
+### Atualizar as capturas
+
+No Windows, execute `capture-demos.ps1`, que abre as URLs públicas no Chrome em modo headless, e depois `render-covers.py` converte e enquadra as capturas em WebP. Não use o script quando os projetos estiverem fora do ar.
+
+As capturas correspondem ao estado dos sites na data em que foram realizadas e podem ficar desatualizadas quando as demonstrações forem reformuladas.
+
+## WhatsApp do portfólio
+
+Configure seu número no arquivo `.env` ou nas variáveis da Vercel:
+
+```env
+VITE_WHATSAPP_NUMBER=5531999999999
+```
+
+Substitua pelo seu número com DDI e DDD, sem espaços ou símbolos.
 
 ## Personalização
 
-- Projetos e links: `src/App.jsx` (`projects`)
-- Serviços e processo: `src/App.jsx` (`services`, `steps`)
-- Cores, layout e animações: `src/styles.css`
-- SEO e título: `index.html`
-
-Observação: fontes e imagens de capa externas exigem internet para carregar. O conteúdo e a navegação continuam funcionais sem elas.
+- Cards e links: `src/App.jsx`
+- Estética e animações: `src/styles.css`, `src/brand-refresh.css` e `src/cinematic-v2.css`
+- Metadados e SEO: `index.html`
+- Capturas: `public/projects/*.webp`
