@@ -110,40 +110,34 @@ export default function DirectorCut() {
     </header>
 
     <main id="principal">
-      <section className="dc-hero" id="inicio" aria-label="Apresentação">
-        <div className="dc-hero-background" aria-hidden="true">
+      <section className="reel-opening" id="inicio" aria-labelledby="reel-title">
+        <div className="reel-letterbox reel-letterbox-top" aria-hidden="true" />
+        <div className="reel-theater-background" aria-hidden="true">
           <img key={selection.id} src={selection.hero || selection.image} alt="" fetchPriority="high"/>
         </div>
-        <div className="dc-hero-lines" aria-hidden="true"/>
-        <div className="dc-hero-inner dc-wrap">
-          <div className="dc-hero-super"><span><i/> INDEPENDENT DIGITAL STUDIO</span><span>VOL. 01 — 2026</span></div>
-          <div className="dc-hero-content">
-            <span className="dc-kicker"><span className="dc-kicker-line"/> CRIATIVIDADE COM PROPÓSITO</span>
-            <h1>O comum<br/>não deixa<br/><em>marcas<span>.</span></em></h1>
-            <p>Eu crio sites autorais para negócios que querem ser lembrados. Design com personalidade. Tecnologia que funciona.</p>
-            <div className="dc-hero-cta">
-              <a className="dc-filled-link" href="#projetos">Explorar projetos <ArrowUpRight size={21}/></a>
-              <a className="dc-ghost-link" href="#contato">Vamos criar algo <ArrowUpRight size={17}/></a>
+        <div className="reel-theater-shade" aria-hidden="true"/>
+        <div className="reel-opening-content dc-wrap">
+          <div className="reel-opening-meta"><span><i/> LUAN SILVA / VISUAL EXPERIENCES</span><span>PORTFÓLIO 2026 — DIREÇÃO CRIATIVA</span></div>
+          <div className="reel-opening-title">
+            <span className="reel-pretitle">UMA EXPERIÊNCIA DIGITAL POR LUAN SILVA</span>
+            <h1 id="reel-title"><span>Não crio</span><span>apenas <em>sites.</em></span><span>Crio <i>impacto.</i></span></h1>
+            <div className="reel-opening-action">
+              <p>Websites com narrativa, identidade e presença. Para negócios que merecem ser protagonistas.</p>
+              <a href="#projetos" className="reel-play"><span className="reel-play-icon" aria-hidden="true">▶</span><span>EXPLORAR O PORTFÓLIO<small>DESCUBRA AS EXPERIÊNCIAS</small></span><ArrowUpRight size={22}/></a>
             </div>
           </div>
-          <a className="dc-hero-now" href={selection.url} target="_blank" rel="noopener noreferrer" aria-label={"Abrir projeto "+selection.title}>
-            <span className="dc-hero-now-bar"><span>EM CARTAZ</span><span>0{active+1} / 05</span></span>
-            <strong>{selection.small}</strong>
-            <span>{selection.kind} <ArrowUpRight size={15}/></span>
-          </a>
-          <div className="dc-hero-bottom">
-            <a className="dc-scrollcue" href="#sobre"><span className="dc-scroll-track"><span/></span> DESCUBRA MAIS</a>
-            <span>DESIGN & DESENVOLVIMENTO WEB — BRASIL</span>
+          <div className="reel-opening-bottom">
+            <span>01 / 05 — {selection.title.toUpperCase()}</span>
+            <span>CINEMA NÃO É SÓ PARA TELAS GRANDES.</span>
+            <a href="#sobre">ROLE PARA EXPLORAR ↓</a>
           </div>
         </div>
-        <div className="dc-film-selector" aria-label="Escolha um projeto para visualizar em destaque">
-          {projects.map((p,i)=><button className={"dc-film-thumb"+(i===active?" selected":"")} type="button" key={p.id} onClick={()=>setActive(i)} aria-pressed={active===i} aria-label={"Ver "+p.title+" na abertura"}>
-            <img src={p.image} alt="" loading={i>1?"lazy":"eager"}/>
-            <span><b>{p.id}</b>{p.small}</span>
-          </button>)}
+        <div className="reel-letterbox reel-letterbox-bottom" aria-hidden="true"/>
+        <div className="reel-scenes-switcher" role="group" aria-label="Trocar a imagem da abertura">
+          {projects.map((p,i)=><button type="button" key={p.id} className={active===i?"selected":""} onClick={()=>setActive(i)} aria-pressed={active===i} aria-label={"Mostrar "+p.title}><span>{p.id}</span></button>)}
         </div>
       </section>
-
+      <div className="reel-opening-credit" aria-hidden="true"><span>LUAN SILVA — PORTFÓLIO / 2026</span><span>DESIGN. DIREÇÃO. DESENVOLVIMENTO.</span><span>SCROLL ↓</span></div>
       <section className="dc-intro" id="sobre">
         <div className="dc-wrap dc-intro-top"><SectionLabel number="01">A FILOSOFIA</SectionLabel><span>BEYOND THE ORDINARY / 2026</span></div>
         <div className="dc-wrap dc-intro-grid">
@@ -169,22 +163,22 @@ export default function DirectorCut() {
             <span>{String(visible.length).padStart(2,"0")} / PROJETOS</span>
           </div>
         </div>
-        <div className="dc-scenes">
-          {visible.map((p,i)=><article className={"dc-scene scene-"+p.id+" dc-reveal"} key={p.id} style={{"--accent":p.color}}>
-            <div className="dc-scene-picture">
-              <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label={"Abrir demonstração de "+p.title}>
-                <img src={p.image} alt={"Captura real da demonstração "+p.title} loading="lazy"/>
-                <span className="dc-scene-dark"/>
-                <span className="dc-scene-picture-top"><span>SELECTED WORK / {p.id}</span><span>WEB EXPERIENCE</span></span>
-                <span className="dc-scene-open"><ArrowUpRight size={26}/></span>
-                <span className="dc-scene-picture-bottom">{p.tagline}</span>
-              </a>
+        <div className="reel-feature-films">
+          {visible.map((p,i)=><article className="reel-film" key={p.id} style={{"--accent":p.color}}>
+            <div className="reel-film-screen">
+              <img src={p.hero || p.image} alt="" loading="lazy"/>
+              <div className="reel-film-vignette"/>
+              <div className="reel-film-frame-top"><span>PORTFÓLIO / SCENE {p.id}</span><span>DEMONSTRAÇÃO / 2026</span></div>
+              <div className="reel-film-overlay">
+                <p>{p.kind.toUpperCase()} / {p.type.toUpperCase()}</p>
+                <h3>{p.tagline}</h3>
+                <span className="reel-film-line"/>
+                <p className="reel-film-description">{p.description}</p>
+                <a href={p.url} target="_blank" rel="noopener noreferrer">EXPLORAR EXPERIÊNCIA <ArrowUpRight size={22}/></a>
+              </div>
+              <div className="reel-film-index" aria-hidden="true">{p.id}</div>
             </div>
-            <div className="dc-scene-details">
-              <span className="dc-scene-number">/{p.id}</span>
-              <div><span className="dc-scene-type">{p.kind} · {p.type}</span><h3>{p.title}</h3><p>{p.description}</p></div>
-              <a href={p.url} target="_blank" rel="noopener noreferrer">Ver projeto ao vivo <ArrowUpRight size={20}/></a>
-            </div>
+            <div className="reel-film-credits"><span>CAPÍTULO {p.id} / {p.title}</span><span>UM CONCEITO, UMA IDENTIDADE.</span><a href={p.url} target="_blank" rel="noopener noreferrer">VER PROJETO ONLINE ↗</a></div>
           </article>)}
         </div>
         <div className="dc-wrap dc-portfolio-end"><p>* Projetos demonstrativos, não trabalhos contratados. As imagens mostram os sites publicados.</p><a href="#contato">O próximo pode ser o seu <ArrowUpRight size={20}/></a></div>
