@@ -287,3 +287,32 @@
 .project-context a:hover {color:#fff}
 @media(max-width:850px){.project-context{grid-template-columns:1fr;gap:12px}.project-context a{margin-top:4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Mobile-first: presentation clean, imagens consistentes, sem recortes arbitrarios */
+.projects .project-grid {align-items:start}
+.projects .project-card {transform:none;translate:none}
+.projects .project-image {border-radius:12px;clip-path:none;aspect-ratio: 1.42 / 1;height:auto;min-height:0}
+.projects .project-info {padding-top:20px}
+.projects .project-image img {object-fit:cover;object-position:top center}
+@media(min-width:901px){
+ .projects .project-grid {gap:62px 28px}
+ .projects .project-card:first-child {grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:36px;align-items:center}
+ .projects .project-card:first-child .project-image {aspect-ratio:1.48 / 1}
+ .projects .project-card:first-child .project-info {padding:20px}
+}
+@media(max-width:900px){
+ .projects .project-grid {grid-template-columns:1fr;gap:40px}
+ .projects .project-card,.projects .project-card:nth-child(even) {transform:none!important;translate:none!important}
+ .projects .project-image {aspect-ratio: 1.35 / 1;height:auto;min-height:0;border-radius:10px}
+ .projects .project-info {padding:16px 2px 0}
+ .projects .project-info h3 {font-size:clamp(23px,6vw,34px);line-height:1.12}
+ .projects .project-info p {font-size:14px;line-height:1.6}
+ .projects .project-badge {font-size:9px;padding:9px 10px;top:12px;left:12px}
+ .projects .project-action {width:40px;height:40px;top:12px;right:12px}
+ .projects .project-image-title {font-size:clamp(22px,6vw,36px);bottom:20px;left:16px}
+}
+@media(max-width:420px){
+ .projects .project-grid {gap:34px}
+ .projects .project-image {aspect-ratio:1.12 / 1}
+ .projects .project-toolbar {gap:16px;flex-wrap:wrap}
+ .projects .project-info {padding-top:13px}
+}
