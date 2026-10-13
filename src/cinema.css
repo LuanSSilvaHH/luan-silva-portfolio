@@ -386,3 +386,21 @@ html[data-motion=off] .opening-stage{position:relative}
 html[data-motion=off] .opening-title{transform:none;opacity:1}
 html[data-motion=off] .film-portal{transform:translateX(-50%)}
 html[data-motion=off] .scene{clip-path:none;opacity:1}
+/* Opening copy: keep the tagline readable throughout cinematic scrolling. */
+.opening-title { opacity: calc(1 - var(--journey) * .06); }
+.opening-title > p:last-child {
+  position: relative;
+  z-index: 2;
+  color: #faf6ef;
+  font-size: clamp(15px, 1.2vw, 17px);
+  font-weight: 600;
+  line-height: 1.6;
+  text-shadow: 0 2px 12px rgba(0,0,0,.9), 0 0 24px rgba(0,0,0,.65);
+}
+@media (max-width: 700px) {
+  .opening-title > p:last-child {
+    font-size: 15px;
+    padding: 6px 3px;
+    background: radial-gradient(ellipse at center, rgba(16,18,19,.72) 0%, rgba(16,18,19,.34) 58%, transparent 87%);
+  }
+}
