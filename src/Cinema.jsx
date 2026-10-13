@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Pause, Play} from "lucide-react";
+import {ArrowUpRight, ArrowDown, ArrowUp, Menu, X, Pause, Play, Snowflake, Flower2, Building2, Sandwich} from "lucide-react";
 
 const number=(import.meta.env.VITE_WHATSAPP_NUMBER||"5533998803892").replace(/\D/g,"");
 const whatsapp=text=>"https://wa.me/"+number+"?text="+encodeURIComponent(text);
@@ -10,6 +10,11 @@ const projects=[
 {id:"prumo",n:"04",name:"PRUMO Engenharia Civil",short:"PRUMO",sector:"Engenharia civil",type:"Institucional",url:"https://demo-engenharia-civil.vercel.app/",shot:"engenharia",hero:"eng"},
 {id:"ieie",n:"05",name:"Lanche do IEIÉ",short:"IEIÉ",sector:"Cardápio digital",type:"Aplicação",url:"https://web--ieie-app--nw8yr2c7byc6.code.run/",shot:"cardapio",hero:"ieie"}
 ];
+function ThemeIcon({id}) {
+ if(id==="noir") return <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="32" cy="32" r="28"/><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="7"/>{Array.from({length:8},(_,i)=><path key={i} d="M32 12 L32 25" transform={"rotate("+(i*45)+" 32 32)"}/>)}</svg>;
+ const Icon={leal:Snowflake,vitta:Flower2,prumo:Building2,ieie:Sandwich}[id]||Flower2;
+ return <Icon strokeWidth={1.25} aria-hidden="true"/>;
+}
 function Demo({p,label="Abrir demonstração"}){return <a className="demo-link" href={p.url} target="_blank" rel="noopener noreferrer">{label}<ArrowUpRight size={22}/><span className="sr-only"> de {p.name} (nova aba)</span></a>}
 function Shot({p,className=""}){return <figure className={"site-shot "+className}><div aria-hidden="true"><span>● ● ●</span><span>{p.name}</span><ArrowUpRight size={12}/></div><img src={"/projects/"+p.shot+".webp"} alt={"Prévia do site "+p.name} loading="lazy" width="1440" height="900"/></figure>}
 function Label({children}){return <p className="eyebrow">{children}</p>}
@@ -65,7 +70,7 @@ export default function Cinema(){
    <img className="index-card-photo" src={"/projects/hero-"+p.hero+".webp"} alt="" loading="lazy" width="1500" height="1000"/>
    <div className="index-card-shade" aria-hidden="true"/>
    <button type="button" className="index-card-trigger" aria-expanded={selectedIndex===p.id} aria-controls={"index-details-"+p.id} onClick={()=>setSelectedIndex(selectedIndex===p.id?"":p.id)}>
-    <span className="index-card-number">{p.n}</span><span className="index-card-copy"><strong>{p.name}</strong><small>{p.sector}</small></span><ArrowDown className="index-card-arrow" size={22}/>
+    <span className="index-card-number">{p.n}</span><span className="index-card-theme index-card-theme-left" aria-hidden="true"><ThemeIcon id={p.id}/></span><span className="index-card-copy"><strong>{p.name}</strong><small>{p.sector}</small></span><ArrowDown className="index-card-arrow" size={22}/><span className="index-card-theme index-card-theme-right" aria-hidden="true"><ThemeIcon id={p.id}/></span>
    </button>
    <div id={"index-details-"+p.id} className="index-card-details" hidden={selectedIndex!==p.id}>
     <span>UMA EXPERIÊNCIA / {p.type.toUpperCase()}</span>
