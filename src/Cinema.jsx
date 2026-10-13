@@ -15,7 +15,7 @@ function Shot({p,className=""}){return <figure className={"site-shot "+className
 function Label({children}){return <p className="eyebrow">{children}</p>}
 function SceneTop({p}){return <div className="scene-top"><span>{p.n} / {p.sector}</span><span>Estudo demonstrativo</span></div>}
 export default function Cinema(){
- const [menu,setMenu]=useState(false),[filter,setFilter]=useState("Todos"),[active,setActive]=useState(""),[paused,setPaused]=useState(false);
+ const [menu,setMenu]=useState(false),[filter,setFilter]=useState("Todos"),[active,setActive]=useState(""),[selectedIndex,setSelectedIndex]=useState(""),[paused,setPaused]=useState(false);
  const opening=useRef(null),toggle=useRef(null);
  useEffect(()=>{const saved=localStorage.getItem("portfolio-motion");setPaused(saved==="off");},[]);
  useEffect(()=>{document.documentElement.dataset.motion=paused?"off":"on";localStorage.setItem("portfolio-motion",paused?"off":"on");},[paused]);
@@ -61,7 +61,17 @@ export default function Cinema(){
  <section className="project-index" id="projetos">
   <div className="index-heading"><Label>A coleção / cinco demonstrações</Label><h2>Escolha um<br/><em>universo.</em></h2><p>Projetos de estudo que exploram diferentes negócios, linguagens e possibilidades para a web.</p></div>
   <div className="index-list"><div className="filters" role="group" aria-label="Filtrar índice de projetos">{["Todos","Institucional","Aplicação"].map(f=><button key={f} aria-pressed={filter===f} onClick={()=>setFilter(f)}>{f}</button>)}</div>
-  {projects.filter(p=>filter==="Todos"||p.type===filter).map(p=><a className="index-row" href={"#"+p.id} key={p.id}><span>{p.n}</span><strong>{p.name}</strong><small>{p.sector}</small><ArrowDown size={20}/></a>)}</div>
+  {projects.filter(p=>filter==="Todos"||p.type===filter).map(p=><div className={"index-card"+(selectedIndex===p.id?" is-selected":"")} key={p.id}>
+   <img className="index-card-photo" src={"/projects/hero-"+p.hero+".webp"} alt="" loading="lazy" width="1500" height="1000"/>
+   <div className="index-card-shade" aria-hidden="true"/>
+   <button type="button" className="index-card-trigger" aria-expanded={selectedIndex===p.id} aria-controls={"index-details-"+p.id} onClick={()=>setSelectedIndex(selectedIndex===p.id?"":p.id)}>
+    <span className="index-card-number">{p.n}</span><span className="index-card-copy"><strong>{p.name}</strong><small>{p.sector}</small></span><ArrowDown className="index-card-arrow" size={22}/>
+   </button>
+   <div id={"index-details-"+p.id} className="index-card-details" hidden={selectedIndex!==p.id}>
+    <span>UMA EXPERIÊNCIA / {p.type.toUpperCase()}</span>
+    <div><a href={"#"+p.id}>Explorar capítulo <ArrowDown size={18}/></a><a href={p.url} target="_blank" rel="noopener noreferrer">Abrir site <ArrowUpRight size={18}/></a></div>
+   </div>
+  </div>)}</div>
  </section>
  <nav className="scene-rail" aria-label="Atalhos dos projetos">{projects.map(p=><a key={p.id} href={"#"+p.id} aria-label={p.name} aria-current={active===p.id?"location":undefined}><span>{p.n}</span><b>{p.short}</b></a>)}</nav>
  <article className="scene scene-noir" id="noir" data-project>
