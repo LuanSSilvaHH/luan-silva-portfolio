@@ -1,15 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./styles.css";
-import "./cinematic.css";
-import "./chapters.css";
-import "./brand-refresh.css";
-import "./cinematic-v2.css";
-import "./luxury.css";
+import DirectorCut from "./DirectorCut.jsx";
+import "./director-cut.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <DirectorCut />
+  </React.StrictMode>
 );
