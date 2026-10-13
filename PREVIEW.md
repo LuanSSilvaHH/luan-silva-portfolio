@@ -1,6 +1,6 @@
 # Além da tela — prévia para aprovação
 
-Status: implementação local, sem push e sem publicação.
+Status: versão aprovada, incorporada à branch main e enviada ao GitHub em 13/10/2026.
 Branch: preview/cinema-20261013.
 
 ## Direção
@@ -42,4 +42,4 @@ Na mesma rede local: http://192.168.0.139:5173/
 Comparação: http://192.168.0.139:5173/review/index.html
 
 O IP pode mudar. Se o servidor encerrar, executar npm.cmd run dev -- --host 0.0.0.0 --port 5173 na pasta do projeto.
-Produção permanece na versão anterior até aprovação.
+A publicação de produção é acionada automaticamente pelo push à branch main no Vercel; consulte o status do deploy no projeto.
