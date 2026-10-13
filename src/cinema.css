@@ -404,3 +404,11 @@ html[data-motion=off] .scene{clip-path:none;opacity:1}
     background: radial-gradient(ellipse at center, rgba(16,18,19,.72) 0%, rgba(16,18,19,.34) 58%, transparent 87%);
   }
 }
+/* Supporting copy in the lower cinematic frame: stronger contrast and hierarchy. */
+.opening-bottom > p {
+  color: #f7f3eb;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-shadow: 0 2px 12px rgba(0,0,0,.9);
+}
