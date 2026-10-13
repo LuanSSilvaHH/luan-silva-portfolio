@@ -33,6 +33,21 @@ export default function Cinema(){
   document.querySelectorAll("[data-project]").forEach(el=>observer.observe(el));
   return()=>{cancelAnimationFrame(frame);window.removeEventListener("scroll",scroll);window.removeEventListener("resize",scroll);mq.removeEventListener("change",scroll);observer.disconnect()};
  },[paused]);
+ useEffect(()=>{
+  const rail=document.querySelector(".scene-rail");
+  if(!rail)return;
+  let start=0;
+  const measure=()=>{start=document.querySelector(".project-index").getBoundingClientRect().bottom+window.scrollY;update()};
+  const update=()=>{
+   const compact=window.scrollY>=start-8;
+   document.body.classList.toggle("rail-only-header",compact);
+   if(compact)setMenu(false);
+  };
+  measure();
+  window.addEventListener("scroll",update,{passive:true});
+  window.addEventListener("resize",measure);
+  return()=>{document.body.classList.remove("rail-only-header");window.removeEventListener("scroll",update);window.removeEventListener("resize",measure)};
+ },[]);
  const close=()=>setMenu(false);
  function submit(e){e.preventDefault();const data=new FormData(e.currentTarget);const nome=String(data.get("nome")||"").trim();if(!nome){e.currentTarget.elements.nome.focus();return}
  window.open(whatsapp("Olá, Luan! Vim pelo seu portfólio e gostaria de conversar sobre um projeto.\n\nNome: "+nome+"\nNegócio: "+(data.get("negocio")||"Não informado")+"\nTipo: "+data.get("tipo")+"\nIdeia: "+(data.get("ideia")||"Vamos conversar?")),"_blank","noopener,noreferrer")}

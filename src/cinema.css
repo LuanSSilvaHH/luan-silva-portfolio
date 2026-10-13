@@ -512,3 +512,11 @@ html[data-motion=off] .scene{clip-path:none;opacity:1}
 .project-index .filters button:focus-visible{outline:2px solid #ead2b1;outline-offset:3px}
 .project-index .index-card{border-bottom-color:#555b5b}
 @media(max-width:700px){.project-index{background:radial-gradient(ellipse at 0% 65%,rgba(116,80,52,.13),transparent 80%),#101315}}
+
+/* Show only the project chapter rail after the visitor reaches it. */
+.masthead{transition:transform .28s ease,visibility .28s ease}
+body.rail-only-header .masthead{transform:translateY(-101%);visibility:hidden;pointer-events:none}
+.scene-rail{top:0}
+html{scroll-padding-top:58px}
+@media(max-width:700px){.scene-rail{top:0}html{scroll-padding-top:62px}}
+@media(prefers-reduced-motion:reduce){.masthead{transition:none}}
