@@ -256,61 +256,81 @@ export default function App() {
         </div>
       </header>
       <main id="conteudo">
-        <section id="inicio" className="hero">
-          <div className="hero-noise" />
-          <div className="hero-grid-texture" aria-hidden="true" />
-          <div className="container hero-inner">
-            <div className="hero-topline">
-              <span className="status-dot" /> DESENVOLVIMENTO WEB INDEPENDENTE{" "}
-              <span className="topline-index">PORTFÓLIO / 2026</span>
+        <section id="inicio" className="lux-hero">
+          <div className="lux-hero-aura" aria-hidden="true" />
+          <div className="lux-hero-grain" aria-hidden="true" />
+          <div className="container lux-hero-inner">
+            <div className="lux-hero-topline">
+              <span><i aria-hidden="true" /> ESTÚDIO DIGITAL INDEPENDENTE</span>
+              <span className="lux-hero-edition">PORTFÓLIO — EDIÇÃO 2026</span>
             </div>
-            <div className="hero-content">
-              <div className="hero-eyebrow">
-                <span className="line" /> DIGITAL COM PROPÓSITO
-              </div>
-              <h1>
-                Seu negócio
-                <br />
-                merece <em>ser</em>
-                <br />
-                <span>
-                  notado<span className="period">.</span>
-                </span>
-              </h1>
-              <div className="hero-bottom">
-                <p>
-                  Crio experiências digitais que unem{" "}
-                  <strong>design, estratégia e tecnologia</strong> para
-                  transformar presença online em oportunidade.
+            <div className="lux-hero-layout">
+              <div className="lux-hero-copy">
+                <p className="lux-overline"><span aria-hidden="true" /> DESIGN × ESTRATÉGIA × TECNOLOGIA</p>
+                <h1>
+                  Presença que
+                  <em>impressiona<span className="lux-dot">.</span></em>
+                </h1>
+                <p className="lux-hero-description">
+                  Sites autorais para marcas que não querem ser apenas mais uma
+                  na internet. Design com personalidade, experiência com intenção.
                 </p>
-                <a href="#projetos" className="hero-primary-link">
-                  Ver meus projetos <ArrowUpRight size={20} />
+                <div className="lux-hero-actions">
+                  <a className="lux-button-main" href="#projetos">
+                    Conheça meu trabalho <ArrowUpRight size={19} />
+                  </a>
+                  <a className="lux-button-text" href="#contato">
+                    Vamos criar algo? <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+                <div className="lux-hero-credit">
+                  <span className="lux-credit-line" />
+                  <span>LUAN SILVA <b>—</b> DESIGN & DESENVOLVIMENTO WEB</span>
+                </div>
+              </div>
+              <div className="lux-feature">
+                <div className="lux-feature-orbit" aria-hidden="true" />
+                <a
+                  className="lux-feature-poster"
+                  href="https://demoautomobilistica.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Explorar projeto demonstrativo NOIR Auto Studio"
+                >
+                  <img
+                    src="/projects/automotiva.webp"
+                    alt="Prévia do site demonstrativo NOIR Auto Studio"
+                    fetchPriority="high"
+                  />
+                  <span className="lux-feature-shade" aria-hidden="true" />
+                  <span className="lux-feature-top">
+                    <span>PROJETO EM DESTAQUE</span>
+                    <span>01 / 05</span>
+                  </span>
+                  <span className="lux-feature-bottom">
+                    <span><small>IDENTIDADE / EXPERIÊNCIA DIGITAL</small><strong>NOIR<span>.</span></strong></span>
+                    <span className="lux-feature-arrow" aria-hidden="true"><ArrowUpRight size={24} /></span>
+                  </span>
                 </a>
+                <span className="lux-feature-side-label" aria-hidden="true">SELECTED WORK — 2026</span>
               </div>
             </div>
-            <div className="hero-brand-showcase" aria-hidden="true">
-              <div className="showcase-top"><span>LS / STUDIO DIGITAL</span><span>01—26</span></div>
-              <div className="showcase-mark"><img src="/favicon.png" alt="" /></div>
-              <div className="showcase-bottom"><span>IDEIAS EM MOVIMENTO.</span><span>EST. 2026</span></div>
-            </div>
-            <div className="hero-footer">
-              <span>LUAN SILVA © 2026</span>
-              <a href="#sobre">
-                DESLIZE PARA EXPLORAR <ChevronDown size={15} />
-              </a>
-              <span>DESIGN & DESENVOLVIMENTO</span>
+            <div className="lux-hero-footer">
+              <a href="#sobre">ROLE PARA EXPLORAR <ChevronDown size={16} /></a>
+              <span>CRIAÇÃO DIGITAL COM IDENTIDADE</span>
+              <span>BRASIL · ATENDIMENTO ONLINE</span>
             </div>
           </div>
         </section>
-        <section className="signature-strip" aria-label="Especialidades">
-          <div className="signature-strip-inner">
-            <span>DESIGN QUE IMPRESSIONA</span>
-            <span className="signature-star" aria-hidden="true">✳</span>
-            <span>EXPERIÊNCIAS QUE CONVERTEM</span>
-            <span className="signature-star" aria-hidden="true">✳</span>
-            <span>DESENVOLVIMENTO SOB MEDIDA</span>
+        <div className="lux-ribbon" aria-label="Especialidades de desenvolvimento web">
+          <div className="container lux-ribbon-inner">
+            <span>ESTRATÉGIA ANTES DA ESTÉTICA</span>
+            <span className="lux-ribbon-symbol" aria-hidden="true">✳</span>
+            <span>DESIGN COM PERSONALIDADE</span>
+            <span className="lux-ribbon-symbol" aria-hidden="true">✳</span>
+            <span>TECNOLOGIA QUE FUNCIONA</span>
           </div>
-        </section>
+        </div>
         <section className="intro section" id="sobre">
           <div className="container intro-grid">
             <div className="section-marker" data-reveal>
@@ -318,9 +338,9 @@ export default function App() {
             </div>
             <div data-reveal>
               <p className="intro-lead">
-                A internet está cheia de sites.
+                A primeira impressão
                 <br />
-                <span>O seu precisa fazer diferença.</span>
+                <span>não acontece duas vezes.</span>
               </p>
               <div className="intro-bottom">
                 <p>
@@ -351,11 +371,6 @@ export default function App() {
                 Uma seleção de projetos demonstrativos que exploram diferentes
                 negócios, necessidades e experiências digitais.
               </p>
-            </div>
-            <div className="project-context" data-reveal>
-              <span className="project-context-kicker">DO CONCEITO À EXPERIÊNCIA</span>
-              <p>Não é apenas sobre ter um site bonito. Cada projeto explora uma forma diferente de apresentar serviços, valorizar imagens e facilitar o primeiro contato com clientes.</p>
-              <a href="#contato">Quero um projeto assim <ArrowUpRight size={16} /></a>
             </div>
             <div className="project-toolbar">
               <div
