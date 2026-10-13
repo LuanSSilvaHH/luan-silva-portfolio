@@ -494,3 +494,21 @@ html[data-motion=off] .scene{clip-path:none;opacity:1}
 .index-card.is-selected .index-card-theme-left{transform:translate(calc(100cqw - 67px),-50%) scale(.72)}
 }
 @media(prefers-reduced-motion:reduce){.index-card-theme{transition:none!important}}
+
+/* Approved dark direction for the project collection — preview only */
+.project-index{
+  background:
+    radial-gradient(ellipse 52% 60% at 22% 90%,rgba(116,80,52,.13),transparent 75%),
+    radial-gradient(ellipse 75% 60% at 80% 0%,rgba(80,85,84,.09),transparent 80%),
+    #101315;
+  color:#f4f0e9;
+}
+.project-index .index-heading h2{color:#f6f1e8}
+.project-index .index-heading h2 em{color:#d6b99a}
+.project-index .index-heading>p:last-child{color:#c7c3bc}
+.project-index .index-heading .eyebrow,.project-index .index-heading [class*="label"]{color:#c4b6a4}
+.project-index .filters button{color:#e9e4dd;border-color:#797b76;background:rgba(255,255,255,.025)}
+.project-index .filters button[aria-pressed=true]{background:#ead2b1;color:#101315;border-color:#ead2b1}
+.project-index .filters button:focus-visible{outline:2px solid #ead2b1;outline-offset:3px}
+.project-index .index-card{border-bottom-color:#555b5b}
+@media(max-width:700px){.project-index{background:radial-gradient(ellipse at 0% 65%,rgba(116,80,52,.13),transparent 80%),#101315}}
