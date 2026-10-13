@@ -383,7 +383,7 @@ export default function App() {
             <div className="project-grid">
               {visible.map((p, i) => (
                 <a
-                  className={"project-card " + p.className}
+                  className={"project-card project-feature " + p.className}
                   key={p.id}
                   href={p.url}
                   target="_blank"
@@ -392,6 +392,8 @@ export default function App() {
                   style={{ transitionDelay: `${Math.min(i, 3) * 80}ms` }}
                 >
                   <div className="project-image">
+                    <span className="project-visual-number" aria-hidden="true">{p.id}</span>
+                    <span className="project-visual-label" aria-hidden="true">{p.kind}</span>
                     <img
                       src={p.image}
                       alt={`Captura da página inicial de ${p.title}`}
