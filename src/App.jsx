@@ -302,6 +302,15 @@ export default function App() {
             </div>
           </div>
         </section>
+        <section className="signature-strip" aria-label="Especialidades">
+          <div className="signature-strip-inner">
+            <span>DESIGN QUE IMPRESSIONA</span>
+            <span className="signature-star" aria-hidden="true">✳</span>
+            <span>EXPERIÊNCIAS QUE CONVERTEM</span>
+            <span className="signature-star" aria-hidden="true">✳</span>
+            <span>DESENVOLVIMENTO SOB MEDIDA</span>
+          </div>
+        </section>
         <section className="intro section" id="sobre">
           <div className="container intro-grid">
             <div className="section-marker" data-reveal>

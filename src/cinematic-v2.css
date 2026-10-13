@@ -316,3 +316,38 @@
  .projects .project-toolbar {gap:16px;flex-wrap:wrap}
  .projects .project-info {padding-top:13px}
 }
+
+/* Studio direction / V3: editorial impact without compromising mobile */
+.signature-strip {position:relative;z-index:4;overflow:hidden;background:#ff9b43;color:#0b1520;border-block:1px solid #ffbf86}
+.signature-strip-inner {max-width:1600px;margin:auto;min-height:74px;display:flex;align-items:center;justify-content:space-around;gap:clamp(16px,3vw,52px);padding:15px 28px;font:800 clamp(11px,1.05vw,15px)/1.4 'DM Mono',monospace;letter-spacing:.1em;text-align:center}
+.signature-star {font-size:27px;font-weight:400;line-height:1}
+.hero h1 {position:relative;text-wrap:balance}
+.hero h1 em {color:#ffab65;font-style:italic}
+.hero-eyebrow .line {background:#ffab65}
+.hero-primary-link {border-radius:3px}
+.projects .section-heading h2 {letter-spacing:-.07em}
+.projects .project-card:first-child .project-info h3 {font-size:clamp(30px,3.5vw,56px);line-height:1.05;letter-spacing:-.06em}
+.projects .project-image {border:1px solid rgba(255,255,255,.16);box-shadow:0 24px 65px rgba(0,0,0,.25)}
+.projects .project-card:focus-visible {outline:3px solid #ffb16b;outline-offset:6px}
+@media(min-width:901px) {
+ .hero h1 {font-size:clamp(78px,8.4vw,142px)}
+ .hero-bottom p {max-width:410px}
+ .projects .project-card:first-child .project-image {box-shadow:20px 24px 0 rgba(255,153,67,.10),0 30px 80px rgba(0,0,0,.3)}
+}
+@media(max-width:900px) {
+ .signature-strip-inner {min-height:62px;justify-content:center;gap:18px;padding:12px 18px}
+ .signature-strip-inner span:nth-child(n+4) {display:none}
+ .signature-strip-inner span:first-child {max-width:44%}
+ .signature-strip-inner span:nth-child(3) {max-width:44%}
+ .signature-star {font-size:20px}
+ .hero h1 {font-size:clamp(52px,10vw,88px);letter-spacing:-.075em;line-height:.98}
+ .projects .project-card:first-child .project-info h3 {font-size:clamp(25px,7vw,36px)}
+}
+@media(max-width:480px) {
+ .signature-strip-inner {min-height:54px;gap:12px;font-size:9px;letter-spacing:.035em}
+ .signature-strip-inner span:first-child,.signature-strip-inner span:nth-child(3) {max-width:46%}
+ .hero h1 {font-size:clamp(49px,11.5vw,70px);line-height:1.02;letter-spacing:-.07em}
+ .hero-bottom p {font-size:14px;line-height:1.65}
+ .hero-eyebrow {margin-bottom:18px}
+}
+@media(prefers-reduced-motion:reduce){.signature-strip *{animation:none!important}}
