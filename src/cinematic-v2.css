@@ -276,3 +276,14 @@
 @media(prefers-reduced-motion:reduce){
   .projects .project-card:hover .project-image img{transform:none}
 }
+
+/* CodeMakers-Design: clareza editorial, conversão e acessibilidade */
+.skip-link {position:fixed;z-index:9999;top:12px;left:12px;transform:translateY(-160%);padding:12px 18px;background:#fff;color:#101923;font-weight:700;border-radius:4px}
+.skip-link:focus {transform:translateY(0)}
+.project-context {display:grid;grid-template-columns: minmax(140px, .65fr) minmax(260px, 1.8fr) auto;gap:clamp(18px,3vw,50px);align-items:center;margin:18px 0 34px;padding:26px 0;border-top:1px solid rgba(244,240,232,.22);border-bottom:1px solid rgba(244,240,232,.22)}
+.project-context-kicker {font:600 10px/1.6 'DM Mono',monospace;letter-spacing:.16em;color:#ffb16b}
+.project-context p {margin:0;max-width:630px;font-size:clamp(14px,1.35vw,17px);line-height:1.65;color:#d5d6d2}
+.project-context a {display:inline-flex;align-items:center;gap:10px;white-space:nowrap;color:#ffb16b;text-decoration:none;font-size:13px;font-weight:700}
+.project-context a:hover {color:#fff}
+@media(max-width:850px){.project-context{grid-template-columns:1fr;gap:12px}.project-context a{margin-top:4px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}

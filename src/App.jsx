@@ -212,6 +212,7 @@ export default function App() {
       : projects.filter((p) => p.category === filter);
   return (
     <>
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <header className="site-header">
         <div className="header-inner container">
           <a className="logo" href="#inicio" aria-label="Luan Silva, início">
@@ -254,7 +255,7 @@ export default function App() {
           </button>
         </div>
       </header>
-      <main>
+      <main id="conteudo">
         <section id="inicio" className="hero">
           <div className="hero-noise" />
           <div className="hero-grid-texture" aria-hidden="true" />
@@ -341,6 +342,11 @@ export default function App() {
                 Uma seleção de projetos demonstrativos que exploram diferentes
                 negócios, necessidades e experiências digitais.
               </p>
+            </div>
+            <div className="project-context" data-reveal>
+              <span className="project-context-kicker">DO CONCEITO À EXPERIÊNCIA</span>
+              <p>Não é apenas sobre ter um site bonito. Cada projeto explora uma forma diferente de apresentar serviços, valorizar imagens e facilitar o primeiro contato com clientes.</p>
+              <a href="#contato">Quero um projeto assim <ArrowUpRight size={16} /></a>
             </div>
             <div className="project-toolbar">
               <div
