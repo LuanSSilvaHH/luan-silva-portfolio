@@ -75,7 +75,7 @@ export default function Cinema(){
     <div className="portal-panel portal-right"><img src="/projects/hero-ieie.webp" alt="" width="1500" height="1000"/></div>
     <span className="portal-caption">Cinco projetos. Cinco universos.</span>
    </div>
-   <div className="opening-bottom"><a className="enter-link" href="#projetos"><span>Entre nas histórias</span><ArrowDown size={21}/></a><p>Sites, identidades digitais<br/>e aplicações sob medida.</p><span className="opening-index">01 — 05</span></div>
+   <div className="opening-bottom"><a className="enter-link" href="#projetos"><span>Entre nas histórias</span><ArrowDown size={21}/></a><span className="opening-index">01 — 05</span></div>
   </div>
  </section>
  <section className="project-index" id="projetos">
