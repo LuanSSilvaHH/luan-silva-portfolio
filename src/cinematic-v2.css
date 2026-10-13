@@ -287,36 +287,3 @@
 .project-context a:hover {color:#fff}
 @media(max-width:850px){.project-context{grid-template-columns:1fr;gap:12px}.project-context a{margin-top:4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-
-/* CodeMakers-Design: art direction específica por projeto */
-.project-grid {grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(36px,5vw,78px) 24px;align-items:start}
-.project-grid .project-feature {grid-column:span 6;transform:none;position:relative}
-.project-grid .project-feature:first-child {grid-column:span 12;display:grid;grid-template-columns:1.5fr 1fr;align-items:end;gap:clamp(20px,4vw,64px);padding:clamp(18px,3vw,40px);background:linear-gradient(125deg,#1a2025,#111923);border:1px solid rgba(255,255,255,.12)}
-.project-grid .project-feature:first-child .project-image {height:clamp(390px,49vw,670px)}
-.project-grid .project-feature:first-child .project-info {padding-bottom:32px}
-.project-grid .project-feature:nth-child(2) {grid-column:span 5;margin-top:34px}
-.project-grid .project-feature:nth-child(3) {grid-column:span 7}
-.project-grid .project-feature:nth-child(4) {grid-column:span 7}
-.project-grid .project-feature:nth-child(5) {grid-column:span 5;margin-top:45px}
-.project-feature .project-image {isolation:isolate;min-height:330px}
-.project-feature .project-visual-number {position:absolute;z-index:2;right:20px;bottom:-.22em;font:800 clamp(105px,16vw,260px)/1 system-ui,sans-serif;letter-spacing:-.12em;color:rgba(255,255,255,.11);pointer-events:none}
-.project-feature .project-visual-label {position:absolute;z-index:3;left:22px;bottom:26px;font:600 10px/1.4 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#fff;max-width:58%}
-.project-feature .project-image-title {display:none}
-.project-feature.car .project-image {background:#151719;clip-path:polygon(0 0,100% 0,100% 93%,93% 100%,0 100%)}
-.project-feature.climate .project-image {background:#1b303a;border-radius:140px 140px 2px 2px}
-.project-feature.climate .project-visual-number {color:rgba(143,210,231,.2)}
-.project-feature.physio .project-image {background:#c7b7a7;border-radius:180px 180px 0 0}
-.project-feature.physio .project-visual-number {color:rgba(255,255,255,.24)}
-.project-feature.engineering .project-image {background:#1e242a;clip-path:polygon(0 0,95% 0,100% 9%,100% 100%,0 100%)}
-.project-feature.engineering .project-visual-number {font-weight:300}
-.project-feature.food .project-image {background:#342017;border-radius:4px 80px 4px 4px}
-.project-feature.food .project-visual-number {color:rgba(255,177,107,.22)}
-.project-feature .project-info {padding-top:20px}
-@media(max-width:760px){
- .project-grid {grid-template-columns:1fr;gap:44px}
- .project-grid .project-feature,.project-grid .project-feature:first-child,.project-grid .project-feature:nth-child(2),.project-grid .project-feature:nth-child(3),.project-grid .project-feature:nth-child(4),.project-grid .project-feature:nth-child(5){grid-column:1;display:block;margin-top:0;transform:none}
- .project-grid .project-feature:first-child {padding:16px}
- .project-grid .project-feature:first-child .project-image,.project-feature .project-image {height:clamp(300px,80vw,440px);min-height:0}
- .project-grid .project-feature:first-child .project-info{padding-bottom:0}
- .project-feature .project-visual-number{font-size:clamp(110px,28vw,180px)}
-}
